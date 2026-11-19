@@ -16,13 +16,17 @@
 ```
 git clone <URL этого репозитория>
 cd gta6-clip-desk
-python -m venv .venv
-# Windows: .venv\Scripts\activate    macOS/Linux: source .venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r vendor/gtavi-claudecode/requirements.txt
 ```
+На Windows вместо `python3` пиши `python`, а активация: `.venv\Scripts\activate`.
+На macOS команды `python` нет, только `python3` (если и её нет: `brew install python`).
+Строки с `#` в терминал не вставляй: это комментарии.
 
 ## 3. Плагин в Claude Code (проверенная копия, не из интернета)
-Открой Claude Code в папке репозитория:
+Запусти `claude` в терминале из папки репозитория при активном `.venv`, затем введи
+эти команды **внутри Claude Code**, а не в терминале (иначе zsh ответит «no such file»):
 ```
 /plugin marketplace add ./vendor/gtavi-claudecode
 /plugin install gtavi-claudecode@gtavi-claudecode
